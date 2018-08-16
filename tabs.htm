@@ -1,0 +1,64 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            width: 100%;
+            border-bottom: solid 1px #999;
+        }
+
+        ul li {
+            display: inline-block;
+            border-left: solid 1px #999;
+            border-top: solid 1px #999;
+            border-right: solid 1px #999;
+            margin-right: 5px;
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        ul li.selected {
+            color: red;
+        }
+
+        #app {
+            width: 800px;
+            margin: 0 auto;
+        }
+        
+    </style>
+</head>
+<body>
+
+    
+    <div id="app">
+
+        <ul>
+            <li @click="tab='countries'" :class="{ 'selected' : tab == 'countries'}">Countries</li>
+            <li @click="tab='cities'" :class="{ 'selected' : tab == 'cities'}">Cities</li>
+        </ul>
+
+        <div class="tab-content" v-if="tab == 'countries'">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget molestie velit, in sollicitudin erat. Morbi nec dignissim dui, nec consectetur nisl. Vestibulum at nisl eget leo ornare pulvinar. Vivamus tincidunt diam ac placerat consequat. Nullam enim nibh, vestibulum ut tortor at, congue euismod nulla. Pellentesque accumsan purus at libero bibendum, non porta quam ornare. Aenean semper eleifend mi. Nullam commodo sapien et diam egestas, sed luctus felis condimentum. Sed vitae elit lectus. Duis sodales dapibus libero ac vestibulum. Vestibulum non erat non ante accumsan commodo in feugiat neque. Nam gravida non velit non efficitur. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        </div>
+
+        <div class="tab-content" v-if="tab == 'cities'">
+            Phasellus eget blandit tortor. Fusce non dui vitae leo luctus placerat sed sed mauris. Donec ornare ultricies turpis eget semper. Donec dictum, felis sed hendrerit maximus, turpis mi viverra est, a feugiat erat sapien non nisi. Proin vitae nibh pharetra, malesuada urna at, semper mi. In at dictum mi, ut euismod leo. Proin ultrices porttitor purus pretium fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed ligula felis, sodales in scelerisque ut, porta eget elit. Nunc sed dapibus lacus. Vestibulum rutrum elit ac risus feugiat vehicula. Vivamus non erat id ipsum lobortis lobortis. Suspendisse fermentum ante tortor.
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                tab: 'countries'
+            }
+        })
+    </script>
+</body>
+</html>
